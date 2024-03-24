@@ -1,0 +1,18 @@
+[
+  {
+    "uuid": "e969e7fe-9036-4e48-aba4-ae3d58a8ff82",
+    "tipo_sensor": "US",
+    "numero de serie": 1,
+    "data": "1195",
+    "fecha": "24-03-2024",
+    "hora": "12:16:25"
+  },
+  {
+    "uuid": "cf94cea6-abfc-41e6-9c94-ee5eb1505b06",
+    "tipo_sensor": "SIN",
+    "numero de serie": 2,
+    "data": "horizontal",
+    "fecha": "24-03-2024",
+    "hora": "12:16:25"
+  }
+]
