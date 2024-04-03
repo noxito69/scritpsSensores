@@ -1,0 +1,106 @@
+[
+    {
+        "nombre": "sensor ultra sonico",
+        "unidad": "cm",
+        "clave": "US",
+        "descripcion": "mide distancia",
+        "isf": [
+            {
+                "NoSerie": "123",
+                "puerto": "COM1",
+                "Data": [
+                    {
+                        "uuid": "eff5f3b2-4091-4b8e-86c3-77ec2e3834b8",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    },
+                    {
+                        "uuid": "93100fa8-ee8b-434d-830e-7ffc0b99ac21",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    }
+                ]
+            },
+            {
+                "NoSerie": "123",
+                "puerto": "COM1",
+                "Data": [
+                    {
+                        "uuid": "eff5f3b2-4091-4b8e-86c3-77ec2e3834b8",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    },
+                    {
+                        "uuid": "93100fa8-ee8b-434d-830e-7ffc0b99ac21",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "sensor ultra sonico",
+        "unidad": "cm",
+        "clave": "US",
+        "descripcion": "mide distancia",
+        "isf": [
+            {
+                "NoSerie": "123",
+                "puerto": "COM1",
+                "Data": [
+                    {
+                        "uuid": "eff5f3b2-4091-4b8e-86c3-77ec2e3834b8",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    },
+                    {
+                        "uuid": "93100fa8-ee8b-434d-830e-7ffc0b99ac21",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    }
+                ]
+            },
+            {
+                "NoSerie": "123",
+                "puerto": "COM1",
+                "Data": [
+                    {
+                        "uuid": "eff5f3b2-4091-4b8e-86c3-77ec2e3834b8",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    },
+                    {
+                        "uuid": "93100fa8-ee8b-434d-830e-7ffc0b99ac21",
+                        "tipo_sensor": "US",
+                        "numero de serie": 1,
+                        "data": "1195",
+                        "fecha": "03-04-2024",
+                        "hora": "14:13:49"
+                    }
+                ]
+            }
+        ]
+    }
+]

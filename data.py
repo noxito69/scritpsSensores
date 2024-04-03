@@ -33,19 +33,19 @@ class Data(Arreglo):
         with open("./data.json", "w") as archivo:
             archivo.write(json.dumps(da, indent=2))
             
-    '''def extract_funciones(self, json_data):
+    def extract_data(self, json_data):
         data_str = ""
         for data in json_data:
             dat = Data(data['tipo_sensor'], data['numero de serie'], data['data'])
             data_str += str(dat) + "\n"
             self.post(dat)
         
-        return data_str.strip()'''
+        return data_str.strip()
 
 if __name__ == "__main__":
     x = Data()
     
-    '''print(x.extract_funciones(x.extraer_json("data")))'''
+    print(x.extract_data(x.extraer_json("data")))
 
     for func in x.arreglo:
         print("Data", type(func))
