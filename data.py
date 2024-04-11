@@ -86,17 +86,22 @@ if __name__ == "__main__":
         json.dump([item.__dict__ for item in arreglo.arreglo], file, default=str, ensure_ascii=False, indent=4)
     
     # LO DE ERIC
-
-    #x = Data()
     
-    #print(x.extract_data(x.extraer_json("data")))
-
-    #for func in x.arreglo:
-    #    print("Data", type(func))
-
-    #F = Data("US", 1, "1195")
-    #E = Data("SIN",2,"horizontal")
-    #x.post(F)
-    #x.post(E)
     
-    #print(x.ConvertoJson())
+    
+ #hola, esto es un ciclo que crea 10 registros de data nomas de prueba para mandarlos a mongo, puedes comentarlos cuando hagas las pruebas con el serial.
+
+x = Data()
+
+print(x.extract_data(x.extraer_json("data")))
+
+for func in x.arreglo:
+    print("Data", type(func))
+
+for i in range(10):
+    F = Data("US", i, "1195")
+    E = Data("SIN", i, "horizontal")
+    x.post(F)
+    x.post(E)
+
+print(x.ConvertoJson())

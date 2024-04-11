@@ -1,66 +1,162 @@
 [
-    {
-        "tipo_sensor": "TE",
-        "numeroSerie": "1",
-        "data": "nan",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "36fa411c-fd28-4654-bc4a-2ec473d351ae"
-    },
-    {
-        "tipo_sensor": "HU",
-        "numeroSerie": "1",
-        "data": "nan",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "aff863f1-0d64-426b-a1e7-6dac1546a443"
-    },
-    {
-        "tipo_sensor": "US",
-        "numeroSerie": "2",
-        "data": "0",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "63a1cb1b-04cd-4e4c-b044-45bb649627ed"
-    },
-    {
-        "tipo_sensor": "US",
-        "numeroSerie": "3",
-        "data": "0",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "0aba8252-68b6-4d17-85a4-626621b80d7d"
-    },
-    {
-        "tipo_sensor": "FR",
-        "numeroSerie": "4",
-        "data": "0",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "8fb01546-4a4b-47e3-9db4-67a37329c49e"
-    },
-    {
-        "tipo_sensor": "FR",
-        "numeroSerie": "4",
-        "data": "0",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "6c6387b3-36b3-4a1d-8d8e-e18c166fb6a7"
-    },
-    {
-        "tipo_sensor": "RP",
-        "numeroSerie": "5",
-        "data": "0.00",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "9a6c293f-27cd-40b2-bc75-6b9c0ec3f1a2"
-    },
-    {
-        "tipo_sensor": "IR",
-        "numeroSerie": "6",
-        "data": "Obstaculo detectado",
-        "fecha": "10-04-2024",
-        "hora": "22:57:24",
-        "uuid": "373d0e7f-5d8b-40e0-b2ec-d0b2b3ad1bf6"
-    }
+  {
+    "uuid": "e86244f1-65f9-4114-a1fa-ecfc636a9581",
+    "tipo_sensor": "US",
+    "numero de serie": 0,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "a81adb3f-8c49-4b0e-9f41-2b653bb323cd",
+    "tipo_sensor": "SIN",
+    "numero de serie": 0,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "9601f37f-282a-4846-b53c-82774e9be2f5",
+    "tipo_sensor": "US",
+    "numero de serie": 1,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "1bedf845-4221-44d8-84bf-fb219fb489ba",
+    "tipo_sensor": "SIN",
+    "numero de serie": 1,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "73d48f5e-fb76-4216-b256-16fc8c9e7fba",
+    "tipo_sensor": "US",
+    "numero de serie": 2,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "ccec8adc-899a-476c-9aa4-c0af76c2d370",
+    "tipo_sensor": "SIN",
+    "numero de serie": 2,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "010b0aa0-7f10-4f19-a52e-d339a035552d",
+    "tipo_sensor": "US",
+    "numero de serie": 3,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "850a7c94-6e8e-40e9-8163-f7fec65ee003",
+    "tipo_sensor": "SIN",
+    "numero de serie": 3,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "c0bf690c-5982-4e48-9f8a-e6333192b50e",
+    "tipo_sensor": "US",
+    "numero de serie": 4,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "393cb904-39be-4194-8fbe-9c7d8266a2f0",
+    "tipo_sensor": "SIN",
+    "numero de serie": 4,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "8a5cf103-979c-4d34-98a0-91b11a5d4fc4",
+    "tipo_sensor": "US",
+    "numero de serie": 5,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "6565bac3-906f-4aba-83ec-f81a725af52f",
+    "tipo_sensor": "SIN",
+    "numero de serie": 5,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "76460388-83c6-4af0-ba4b-4ce4490d1dbc",
+    "tipo_sensor": "US",
+    "numero de serie": 6,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "b6366c6e-bee9-4a57-a496-d4ba553af07d",
+    "tipo_sensor": "SIN",
+    "numero de serie": 6,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "acd7750a-fa4a-47a6-b708-42f627deecf4",
+    "tipo_sensor": "US",
+    "numero de serie": 7,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "d6cb0cc9-c1ce-44b1-8e92-9df95f6ea006",
+    "tipo_sensor": "SIN",
+    "numero de serie": 7,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "eac99742-c9ee-4cde-94ca-18b6bc3bd251",
+    "tipo_sensor": "US",
+    "numero de serie": 8,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "4b3c592d-c413-4c0e-b6ea-c223a380a9d7",
+    "tipo_sensor": "SIN",
+    "numero de serie": 8,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "9ac2071d-148f-429a-905f-5e60c38709b5",
+    "tipo_sensor": "US",
+    "numero de serie": 9,
+    "data": "1195",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  },
+  {
+    "uuid": "a8ed0c39-ecb1-446f-b39b-4e0cd443f3cb",
+    "tipo_sensor": "SIN",
+    "numero de serie": 9,
+    "data": "horizontal",
+    "fecha": "11-04-2024",
+    "hora": "13:16:07"
+  }
 ]
