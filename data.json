@@ -1,34 +1,66 @@
 [
-  {
-    "uuid": "b2a03db5-1962-49ec-bfa5-8c981dfa8817",
-    "tipo_sensor": "US",
-    "numero de serie": 1,
-    "data": "1195",
-    "fecha": "03-04-2024",
-    "hora": "09:32:30"
-  },
-  {
-    "uuid": "5b4aa65d-5280-4c1e-ac54-ac6470af700a",
-    "tipo_sensor": "SIN",
-    "numero de serie": 2,
-    "data": "horizontal",
-    "fecha": "03-04-2024",
-    "hora": "09:32:30"
-  },
-  {
-    "uuid": "7d9fc47d-3c5d-4433-886e-de819470fdd8",
-    "tipo_sensor": "US",
-    "numero de serie": 1,
-    "data": "1195",
-    "fecha": "03-04-2024",
-    "hora": "09:32:30"
-  },
-  {
-    "uuid": "fe229f1d-54f6-4226-bee0-56baa449d521",
-    "tipo_sensor": "SIN",
-    "numero de serie": 2,
-    "data": "horizontal",
-    "fecha": "03-04-2024",
-    "hora": "09:32:30"
-  }
+    {
+        "tipo_sensor": "TE",
+        "numeroSerie": "1",
+        "data": "nan",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "36fa411c-fd28-4654-bc4a-2ec473d351ae"
+    },
+    {
+        "tipo_sensor": "HU",
+        "numeroSerie": "1",
+        "data": "nan",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "aff863f1-0d64-426b-a1e7-6dac1546a443"
+    },
+    {
+        "tipo_sensor": "US",
+        "numeroSerie": "2",
+        "data": "0",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "63a1cb1b-04cd-4e4c-b044-45bb649627ed"
+    },
+    {
+        "tipo_sensor": "US",
+        "numeroSerie": "3",
+        "data": "0",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "0aba8252-68b6-4d17-85a4-626621b80d7d"
+    },
+    {
+        "tipo_sensor": "FR",
+        "numeroSerie": "4",
+        "data": "0",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "8fb01546-4a4b-47e3-9db4-67a37329c49e"
+    },
+    {
+        "tipo_sensor": "FR",
+        "numeroSerie": "4",
+        "data": "0",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "6c6387b3-36b3-4a1d-8d8e-e18c166fb6a7"
+    },
+    {
+        "tipo_sensor": "RP",
+        "numeroSerie": "5",
+        "data": "0.00",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "9a6c293f-27cd-40b2-bc75-6b9c0ec3f1a2"
+    },
+    {
+        "tipo_sensor": "IR",
+        "numeroSerie": "6",
+        "data": "Obstaculo detectado",
+        "fecha": "10-04-2024",
+        "hora": "22:57:24",
+        "uuid": "373d0e7f-5d8b-40e0-b2ec-d0b2b3ad1bf6"
+    }
 ]

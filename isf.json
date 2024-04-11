@@ -4,20 +4,44 @@
         "puerto": "COM1",
         "Data": [
             {
-                "uuid": "d42adab0-c957-42ab-aa92-94b02fd69ebe",
+                "uuid": "b8e16916-92ac-4274-b029-0aa79c52a832",
                 "tipo_sensor": "US",
                 "numero de serie": 1,
                 "data": "1195",
-                "fecha": "03-04-2024",
-                "hora": "10:36:50"
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
             },
             {
-                "uuid": "e29f5af8-dbe6-4302-9e8c-d514ebda7c82",
+                "uuid": "7b204ccd-a1f4-45ed-a74c-d03fab02a5e3",
                 "tipo_sensor": "US",
                 "numero de serie": 1,
                 "data": "1195",
-                "fecha": "03-04-2024",
-                "hora": "10:36:50"
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "1ce760eb-272d-497b-b605-41736aa7e32c",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "bc3a1dca-072b-473f-87c7-722ae00d5743",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "a8fdafa2-c0d9-497b-a6de-460bb1198e2b",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
             }
         ]
     },
@@ -26,20 +50,90 @@
         "puerto": "COM1",
         "Data": [
             {
-                "uuid": "d42adab0-c957-42ab-aa92-94b02fd69ebe",
+                "uuid": "b8e16916-92ac-4274-b029-0aa79c52a832",
                 "tipo_sensor": "US",
                 "numero de serie": 1,
                 "data": "1195",
-                "fecha": "03-04-2024",
-                "hora": "10:36:50"
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
             },
             {
-                "uuid": "e29f5af8-dbe6-4302-9e8c-d514ebda7c82",
+                "uuid": "7b204ccd-a1f4-45ed-a74c-d03fab02a5e3",
                 "tipo_sensor": "US",
                 "numero de serie": 1,
                 "data": "1195",
-                "fecha": "03-04-2024",
-                "hora": "10:36:50"
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "1ce760eb-272d-497b-b605-41736aa7e32c",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "bc3a1dca-072b-473f-87c7-722ae00d5743",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "a8fdafa2-c0d9-497b-a6de-460bb1198e2b",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            }
+        ]
+    },
+    {
+        "NoSerie": "123",
+        "puerto": "COM1",
+        "Data": [
+            {
+                "uuid": "b8e16916-92ac-4274-b029-0aa79c52a832",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "7b204ccd-a1f4-45ed-a74c-d03fab02a5e3",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "1ce760eb-272d-497b-b605-41736aa7e32c",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            },
+            {
+                "uuid": "bc3a1dca-072b-473f-87c7-722ae00d5743",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
+            }, 
+            {
+                "uuid": "a8fdafa2-c0d9-497b-a6de-460bb1198e2b",
+                "tipo_sensor": "US",
+                "numero de serie": 1,
+                "data": "1195",
+                "fecha": "08-04-2024",
+                "hora": "17:42:30"
             }
         ]
     }

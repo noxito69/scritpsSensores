@@ -2,7 +2,7 @@ from isf import ISF
 from data import Data
 from arreglo import Arreglo
 import json
-
+ 
 class ISG(Arreglo):
     
     def __init__(self, nombre=None, unidad=None, clave=None, descripcion=None, numeroSalas=None, isf=ISF()):

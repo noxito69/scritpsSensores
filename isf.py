@@ -1,7 +1,7 @@
 from arreglo import Arreglo
 from data import Data
 import json
-
+ 
 class ISF(Arreglo):
     
     def __init__(self, NoSerie=None, puerto=None, proyector=None, audio=None, tipo=None, data=Data()):

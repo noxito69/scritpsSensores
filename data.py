@@ -2,6 +2,7 @@ import json
 import uuid
 from arreglo import Arreglo
 from datetime import datetime
+from comSerial import ComSerial
 
 class Data(Arreglo):
     
@@ -14,7 +15,7 @@ class Data(Arreglo):
         self.uuid = uuid.uuid4()  # Generar UUID único
      
         super().__init__()
-        
+         
     def __str__(self) -> str:
         return f"{self.tipo_sensor} (numero de serie:{self.numeroSerie}) (data:{self.data}) (fecha: ${self.fecha}) (hora: {self.hora} )"
         
@@ -36,23 +37,66 @@ class Data(Arreglo):
     def extract_data(self, json_data):
         data_str = ""
         for data in json_data:
-            dat = Data(data['tipo_sensor'], data['numero de serie'], data['data'])
+            dat = Data(data['tipo_sensor'], data['numero_serie'], data['data'])
             data_str += str(dat) + "\n"
             self.post(dat)
         
         return data_str.strip()
 
+    # agregué este de aqui para tomar los datos de mi ComSerial
+    def procesar_datos(self, datos):
+        for dato in datos:
+            partes = dato.split('-')
+            if len(partes) == 4:
+                tipo_sensor, _, numero_serie, data = partes
+                self.tipo_sensor = tipo_sensor
+                self.numeroSerie = numero_serie
+                self.data = data
+                self.guardar_json() 
+
 if __name__ == "__main__":
-    x = Data()
-    
-    print(x.extract_data(x.extraer_json("data")))
+    x = ComSerial()
+    datos = x.datoSerial()  # recupera los datos de ComSerial
 
-    for func in x.arreglo:
-        print("Data", type(func))
+    arreglo = Arreglo()  # instancia de arreglo
 
-    F = Data("US", 1, "1195")
-    E = Data("SIN",2,"horizontal")
-    x.post(F)
-    x.post(E)
+    datos_existentes = arreglo.extraer_json('data')
+
+    for dato in datos:
+        partes = dato.split('-')
+        if len(partes) == 4:
+            tipo_sensor, _, numero_serie, data = partes
+            d = Data(tipo_sensor, numero_serie, data)
+            arreglo.post(d)
     
-    print(x.ConvertoJson())
+    datos_json = []
+    for item in arreglo.arreglo:
+        item_dict = item.__dict__
+        item_dict.pop('arreglo', None)  # Elimina el campo 'arreglo'
+        # Asegúrate de que 'uuid' sea el primer campo
+        item_dict = {'uuid': item_dict['uuid'], **item_dict}
+
+        datos_json.append(item_dict)
+
+    # Agrega los nuevos datos a los datos existentes
+    datos_existentes.extend([item.__dict__ for item in arreglo.arreglo])
+    
+    # para guardarlo en el json con el formato
+    with open('data.json', 'w', encoding='utf-8') as file:
+        json.dump([item.__dict__ for item in arreglo.arreglo], file, default=str, ensure_ascii=False, indent=4)
+    
+    # LO DE ERIC
+
+    #x = Data()
+    
+    #print(x.extract_data(x.extraer_json("data")))
+
+    #for func in x.arreglo:
+    #    print("Data", type(func))
+
+    #F = Data("US", 1, "1195")
+    #E = Data("SIN",2,"horizontal")
+    #x.post(F)
+    #x.post(E)
+    
+    #print(x.ConvertoJson())
