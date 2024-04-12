@@ -17,13 +17,13 @@ class Data(Arreglo):
         super().__init__()
          
     def __str__(self) -> str:
-        return f"{self.tipo_sensor} (numero de serie:{self.numeroSerie}) (data:{self.data}) (fecha: ${self.fecha}) (hora: {self.hora} )"
+        return f"{self.tipo_sensor} (numeroSerie:{self.numeroSerie}) (data:{self.data}) (fecha: ${self.fecha}) (hora: {self.hora} )"
         
     def dictionary(self):
         return{
             "uuid": str(self.uuid),  # Convertir UUID a cadena antes de serializarlo
             "tipo_sensor": self.tipo_sensor,
-            "numero de serie": self.numeroSerie,
+            "numeroSerie": self.numeroSerie,
             "data": self.data,
             "fecha": self.fecha,
             "hora": self.hora,
@@ -37,7 +37,7 @@ class Data(Arreglo):
     def extract_data(self, json_data):
         data_str = ""
         for data in json_data:
-            dat = Data(data['tipo_sensor'], data['numero_serie'], data['data'])
+            dat = Data(data['tipo_sensor'], data['numeroSerie'], data['data'])
             data_str += str(dat) + "\n"
             self.post(dat)
         
@@ -48,9 +48,9 @@ class Data(Arreglo):
         for dato in datos:
             partes = dato.split('-')
             if len(partes) == 4:
-                tipo_sensor, _, numero_serie, data = partes
+                tipo_sensor, _, numeroSerie, data = partes
                 self.tipo_sensor = tipo_sensor
-                self.numeroSerie = numero_serie
+                self.numeroSerie = numeroSerie
                 self.data = data
                 self.guardar_json() 
 
@@ -65,8 +65,8 @@ if __name__ == "__main__":
     for dato in datos:
         partes = dato.split('-')
         if len(partes) == 4:
-            tipo_sensor, _, numero_serie, data = partes
-            d = Data(tipo_sensor, numero_serie, data)
+            tipo_sensor, _, numeroSerie, data = partes
+            d = Data(tipo_sensor, numeroSerie, data)
             arreglo.post(d)
     
     datos_json = []
@@ -91,17 +91,17 @@ if __name__ == "__main__":
     
  #hola, esto es un ciclo que crea 10 registros de data nomas de prueba para mandarlos a mongo, puedes comentarlos cuando hagas las pruebas con el serial.
 
-x = Data()
+#x = Data()
 
-print(x.extract_data(x.extraer_json("data")))
+#print(x.extract_data(x.extraer_json("data")))
 
-for func in x.arreglo:
-    print("Data", type(func))
+#for func in x.arreglo:
+#    print("Data", type(func))
 
-for i in range(10):
-    F = Data("US", i, "1195")
-    E = Data("SIN", i, "horizontal")
-    x.post(F)
-    x.post(E)
+#for i in range(10):
+#    F = Data("US", i, "1195")
+#    E = Data("SIN", i, "horizontal")
+#    x.post(F)
+#    x.post(E)
 
-print(x.ConvertoJson())
+#print(x.ConvertoJson())

@@ -11,10 +11,7 @@ class ISG(Arreglo):
         self.clave = clave
         self.descripcion = descripcion
         self.isf = isf if isf else []
-        super().__init__()
-        
-
-        
+        super().__init__()  
         
     def __str__(self) -> str:
         return f"{self.nombre} ({self.unidad}) ({self.clave}) ({self.descripcion}) isf:({self.isf}) \nisf:\n{str(self.isf.get())}\n"
@@ -33,8 +30,6 @@ class ISG(Arreglo):
         with open("./isg.json", "w") as archivo:
             archivo.write(json.dumps(c, indent=4))
 
-            
-        
     def extract(self, json):
         extracted_isg = ""
         isf = ISF()
@@ -46,14 +41,12 @@ class ISG(Arreglo):
 
         return extracted_isg.strip()
         
-        
 if __name__ == "__main__":
     
     x = ISG()
     S = ISF()
     
     print(x.extract(x.extraer_json("isg")))
-    
     
     for c in x.arreglo: 
         print(c)
@@ -64,13 +57,8 @@ if __name__ == "__main__":
         for s in c.isf.arreglo: 
             print("isf",type(s))
             
-        
             for f in s.data.arreglo: 
                 print("data",type(f))    
-
-
-    
-        
     
     data = Data("US", 1, "1195")
     S = ISF("123","COM1",Data())
@@ -80,11 +68,7 @@ if __name__ == "__main__":
     S.data.post(data)
     C.isf.arreglo.append(S)
    
-    
-
     x.post(C)
 
     print(x.ConvertoJson())
    
-
-    
