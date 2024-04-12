@@ -37,14 +37,13 @@ class ISF(Arreglo):
 
 
 
-
         
     
 if __name__ == "__main__":
     
-    x = ISF()
+    '''x = ISF()
     
-    print(x.extract(x.extraer_json("ISF")))
+    print(x.extract(x.extraer_json("isf")))
 
     for isf in x.arreglo:
         print("isf",type(isf))
@@ -63,6 +62,6 @@ if __name__ == "__main__":
     x.post(isf)
     
     
-    print(x.ConvertoJson())
+    print(x.ConvertoJson())'''
 
 

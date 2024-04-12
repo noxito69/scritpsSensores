@@ -44,31 +44,26 @@ class ISG(Arreglo):
 if __name__ == "__main__":
     
     x = ISG()
-    S = ISF()
     
-    print(x.extract(x.extraer_json("isg")))
-    
+    for i in range(2):
+        S = ISF()
+        data = Data("US", i, "1195")
+        S = ISF("123","COM"+str(i),Data())
+        C = ISG("sensor ultra sonico","cm","US","mide distancia",ISF())
+        S.data.post(data)
+        C.isf.arreglo.append(S)
+        x.post(C)
+
+    print(x.ConvertoJson())
+
     for c in x.arreglo: 
         print(c)
         print("isg:",type(c))
         print("isf:", type(c.isf))
-        #print("Funcion:", type(c.sala.arreglo[0].funcion))
 
         for s in c.isf.arreglo: 
             print("isf",type(s))
             
-            for f in s.data.arreglo: 
-                print("data",type(f))    
-    
-    data = Data("US", 1, "1195")
-    S = ISF("123","COM1",Data())
-    
-    C = ISG("sensor ultra sonico","cm","US","mide distancia",ISF())
-    
-    S.data.post(data)
-    C.isf.arreglo.append(S)
-   
-    x.post(C)
+                   
 
-    print(x.ConvertoJson())
-   
+    
