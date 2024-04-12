@@ -2,6 +2,7 @@ from isf import ISF
 from data import Data
 from arreglo import Arreglo
 import json
+from comSerial import ComSerial
  
 class ISG(Arreglo):
     
@@ -41,14 +42,44 @@ class ISG(Arreglo):
 
         return extracted_isg.strip()
         
+    def procesar_datos_com_serial(self):
+        # Crear una instancia de ComSerial
+        com_serial = ComSerial()
+
+        # Obtener los datos de ComSerial
+        datos = com_serial.datoSerial()
+
+        # guarda las instancias
+        data_instances = []
+
+        # Procesar los datos
+        for dato in datos:
+            partes = dato.split('-')
+            if len(partes) == 4:
+                tipo_sensor, _, numeroSerie, data = partes
+                # Crear una instancia de Data
+                d = Data(tipo_sensor, numeroSerie, data)
+
+                data_instances.append(d)
+
+        return data_instances
+
+                # Crear una instancia de ISF y agregar la instancia de Data
+                #s = ISF("123", "COM6", d)
+                # Agregar la instancia de ISF a ISG
+                #self.isf.arreglo.append(s)
+
+        # Guardar los datos en un archivo JSON
+        #self.ConvertoJson()
+        
 if __name__ == "__main__":
-    
     x = ISG()
+    data_instances = x.procesar_datos_com_serial()
     
-    for i in range(2):
+    for data in data_instances:
         S = ISF()
-        data = Data("US", i, "1195")
-        S = ISF("123","COM"+str(i),Data())
+        #data = data_instances[i]
+        S = ISF("123","COM6",data)
         C = ISG("sensor ultra sonico","cm","US","mide distancia",ISF())
         S.data.post(data)
         C.isf.arreglo.append(S)
@@ -63,7 +94,3 @@ if __name__ == "__main__":
 
         for s in c.isf.arreglo: 
             print("isf",type(s))
-            
-                   
-
-    
