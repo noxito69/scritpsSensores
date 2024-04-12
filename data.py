@@ -17,13 +17,13 @@ class Data(Arreglo):
         super().__init__()
          
     def __str__(self) -> str:
-        return f"{self.tipo_sensor} (numero de serie:{self.numeroSerie}) (data:{self.data}) (fecha: ${self.fecha}) (hora: {self.hora} )"
+        return f"{self.tipo_sensor} (numero_serie:{self.numeroSerie}) (data:{self.data}) (fecha: ${self.fecha}) (hora: {self.hora} )"
         
     def dictionary(self):
         return{
             "uuid": str(self.uuid),  # Convertir UUID a cadena antes de serializarlo
             "tipo_sensor": self.tipo_sensor,
-            "numero de serie": self.numeroSerie,
+            "numero_serie": self.numeroSerie,
             "data": self.data,
             "fecha": self.fecha,
             "hora": self.hora,
@@ -44,7 +44,7 @@ class Data(Arreglo):
         return data_str.strip()
 
     # agregué este de aqui para tomar los datos de mi ComSerial
-    def procesar_datos(self, datos):
+    '''def procesar_datos(self, datos):
         for dato in datos:
             partes = dato.split('-')
             if len(partes) == 4:
@@ -83,17 +83,18 @@ if __name__ == "__main__":
     
     # para guardarlo en el json con el formato
     with open('data.json', 'w', encoding='utf-8') as file:
-        json.dump([item.__dict__ for item in arreglo.arreglo], file, default=str, ensure_ascii=False, indent=4)
+        json.dump([item.__dict__ for item in arreglo.arreglo], file, default=str, ensure_ascii=False, indent=4)'''
     
     # LO DE ERIC
     
     
     
  #hola, esto es un ciclo que crea 10 registros de data nomas de prueba para mandarlos a mongo, puedes comentarlos cuando hagas las pruebas con el serial.
-
-x = Data()
+'''x = Data()
 
 print(x.extract_data(x.extraer_json("data")))
+
+d = x.extract_data(x.extraer_json("data"))
 
 for func in x.arreglo:
     print("Data", type(func))
@@ -103,5 +104,9 @@ for i in range(10):
     E = Data("SIN", i, "horizontal")
     x.post(F)
     x.post(E)
+   
 
-print(x.ConvertoJson())
+# Delete all records in the JSON file
+#x.arreglo.clear()
+x.ConvertoJson()
+'''
