@@ -4,14 +4,14 @@ import json
  
 class ISF(Arreglo):
     
-    def __init__(self, NoSerie=None, puerto=None, proyector=None, audio=None, tipo=None, data=Data()):
+    def __init__(self, NoSerie=None, puerto=None, data=Data()):
         self.NoSerie = NoSerie
         self.puerto = puerto
         self.data = data if data else []
         super().__init__()
     
     def __str__(self) -> str:
-        return f"No.Serie: {self.NoSerie} (Puerto:{self.puerto} ) {self.data} \ndata:\n {str(self.data.get())}\n"
+        return f"No.Serie: {self.NoSerie} (Puerto:{self.puerto} ) \ndata:\n {str(self.data.get())}\n"
                 
     def dictionary(self):
         return{
@@ -41,15 +41,15 @@ class ISF(Arreglo):
     
 if __name__ == "__main__":
     
-    '''x = ISF()
+    x = ISF()
     
     print(x.extract(x.extraer_json("isf")))
 
-    for isf in x.arreglo:
+    '''for isf in x.arreglo:
         print("isf",type(isf))
         print("isf",type(isf.data))
         for f in isf.data.arreglo: 
-            print("data",type(f))
+            print("data",type(f))'''
             
     data = Data("US", 1, "1195")
     isf = ISF("123","COM1",Data())
@@ -62,6 +62,6 @@ if __name__ == "__main__":
     x.post(isf)
     
     
-    print(x.ConvertoJson())'''
+    x.ConvertoJson()
 
-
+    print(isf)

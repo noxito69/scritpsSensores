@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "NoSerie": "123",
+        "puerto": "COM1",
+        "Data": [
+            {
+                "uuid": "ad90c50e-cd3d-4e13-872e-b3583744b96a",
+                "tipo_sensor": "US",
+                "numero_serie": 1,
+                "data": "1195",
+                "fecha": "13-04-2024",
+                "hora": "13:09:51"
+            }
+        ]
+    }
+]

@@ -3,15 +3,26 @@ from data import Data
 from arreglo import Arreglo
 import json
 from comSerial import ComSerial
- 
+import time
+
+sensor_dict = {
+    "US": ("sensor ultra sonico", "cm", "US", "mide distancia"),
+    "TE": ("sensor de temperatura", "°", "TE", "mide temperatura"),
+    "HU": ("sensor humedad", "%", "HU", "mide humedad"),
+    "FR": ("sensor fotoresistencia", "Lx", "FR", "mide la luz"),
+    "RP": ("sensor de RPM", "rpm", "RP", "mide las revoluciones por minuto"),
+    "IR": ("sensor de infrarojo", "estado", "IR", "revisa si hay obstaculos"),
+    "IN": ("sensor de inclinacion", "estado", "IN", "revisa el estado del vehiculo"),
+}
+
 class ISG(Arreglo):
     
-    def __init__(self, nombre=None, unidad=None, clave=None, descripcion=None, numeroSalas=None, isf=ISF()):
+    def __init__(self, nombre=None, unidad=None, clave=None, descripcion=None, isf=ISF()):
         self.nombre = nombre
         self.unidad = unidad
         self.clave = clave
         self.descripcion = descripcion
-        self.isf = isf if isf else []
+        self.isf = isf if isf else []  # Crear una nueva instancia de ISF si no se proporciona ninguna
         super().__init__()  
         
     def __str__(self) -> str:
@@ -33,13 +44,12 @@ class ISG(Arreglo):
 
     def extract(self, json):
         extracted_isg = ""
-        isf = ISF()
         for isg_data in json:
-            igg = ISG(isg_data['nombre'], isg_data['unidad'], isg_data['clave'], isg_data['descripcion'], ISF())
+            igg = ISG(isg_data['nombre'], isg_data['unidad'], isg_data['clave'], isg_data['descripcion'])
+            igg.isf = ISF()  # Crear una nueva instancia de ISF
             igg.isf.extract(isg_data['isf'])
             extracted_isg += str(igg) + "\n"
             self.post(igg)
-
         return extracted_isg.strip()
         
     def procesar_datos_com_serial(self):
@@ -49,48 +59,52 @@ class ISG(Arreglo):
         # Obtener los datos de ComSerial
         datos = com_serial.datoSerial()
 
-        # guarda las instancias
-        data_instances = []
-
         # Procesar los datos
         for dato in datos:
             partes = dato.split('-')
             if len(partes) == 4:
                 tipo_sensor, _, numeroSerie, data = partes
-                # Crear una instancia de Data
-                d = Data(tipo_sensor, numeroSerie, data)
-
-                data_instances.append(d)
-
-        return data_instances
-
-                # Crear una instancia de ISF y agregar la instancia de Data
-                #s = ISF("123", "COM6", d)
-                # Agregar la instancia de ISF a ISG
-                #self.isf.arreglo.append(s)
+                # Verificar si el tipo de sensor está en el diccionario
+                if tipo_sensor in sensor_dict:
+                    nombre, unidad, clave, descripcion = sensor_dict[tipo_sensor]
+                    # Crear una instancia de ISF con los datos del sensor
+                    isf = ISF(numeroSerie, "COM1", Data())
+                    # Crear una instancia de Data
+                    d = Data(tipo_sensor, numeroSerie, data)
+                    # Agregar la instancia de Data a ISF
+                    isf.data.post(d)
+                    # Crear una instancia de ISG si aún no existe
+                    if not self.arreglo:
+                        igg = ISG(nombre, unidad, clave, descripcion, isf)
+                        self.post(igg)
+                    else:
+                        # Buscar si ya existe una instancia de ISG con el mismo tipo de sensor
+                        igg = next((x for x in self.arreglo if x.clave == clave), None)
+                        if igg:
+                            # Si ya existe, agregar ISF a esa instancia de ISG
+                            igg.isf.arreglo.append(isf)
+                        else:
+                            # Si no existe, crear una nueva instancia de ISG y agregar ISF
+                            igg = ISG(nombre, unidad, clave, descripcion, isf)
+                            self.post(igg)
 
         # Guardar los datos en un archivo JSON
-        #self.ConvertoJson()
-        
+        self.ConvertoJson()
+
 if __name__ == "__main__":
     x = ISG()
-    data_instances = x.procesar_datos_com_serial()
     
-    for data in data_instances:
-        S = ISF()
-        #data = data_instances[i]
-        S = ISF("123","COM6",data)
-        C = ISG("sensor ultra sonico","cm","US","mide distancia",ISF())
-        S.data.post(data)
-        C.isf.arreglo.append(S)
-        x.post(C)
+    while True:
+        x.procesar_datos_com_serial()
+        
+        print(x.ConvertoJson())
 
-    print(x.ConvertoJson())
+        for c in x.arreglo: 
+            print(c)
+            print("isg:", type(c))
+            print("isf:", type(c.isf))
 
-    for c in x.arreglo: 
-        print(c)
-        print("isg:",type(c))
-        print("isf:", type(c.isf))
-
-        for s in c.isf.arreglo: 
-            print("isf",type(s))
+            for s in c.isf.arreglo: 
+                print("isf", type(s))
+                
+        time.sleep(5)
