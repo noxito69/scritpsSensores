@@ -1,7 +1,7 @@
 import serial, time
 
 class ComSerial:
-    def __init__(self, port = 'COM6', baudrate = 115200) -> None:
+    def __init__(self, port = 'COM3', baudrate = 115200) -> None:
         self.port = port
         self.baudrate = baudrate
 

@@ -37,7 +37,7 @@ class Data(Arreglo):
     def extract_data(self, json_data):
         data_str = ""
         for data in json_data:
-            dat = Data(data['tipo_sensor'], data['numeroSerie'], data['data'])
+            dat = Data(data['tipo_sensor'], data['numero_serie'], data['data'])
             data_str += str(dat) + "\n"
             self.post(dat)
         
@@ -56,7 +56,7 @@ class Data(Arreglo):
 
 if __name__ == "__main__":
     x = ComSerial()
-    datos = x.datoSerial()  # recupera los datos de ComSerial
+    '''datos = x.datoSerial()  # recupera los datos de ComSerial
 
     arreglo = Arreglo()  # instancia de arreglo
 
@@ -83,10 +83,10 @@ if __name__ == "__main__":
     
     # para guardarlo en el json con el formato
     with open('data.json', 'w', encoding='utf-8') as file:
-        json.dump([item.__dict__ for item in arreglo.arreglo], file, default=str, ensure_ascii=False, indent=4)
+        json.dump([item.__dict__ for item in arreglo.arreglo], file, default=str, ensure_ascii=False, indent=4)'''
 
 
-''' 
+
     # LO DE ERIC
     
     
@@ -106,7 +106,7 @@ x = Data()
 #    x.post(E)
 
 #print(x.ConvertoJson())
-d = x.extract_data(x.extraer_json("data"))
+'''d = x.extract_data(x.extraer_json("data"))
 
 for func in x.arreglo:
     print("Data", type(func))
