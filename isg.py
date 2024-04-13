@@ -94,3 +94,5 @@ if __name__ == "__main__":
 
         for s in c.isf.arreglo: 
             print("isf",type(s))
+
+# CREAR UNA CLASE QUE PUEDA MAPEAR LOS DATOS DE ISG.JSON Y QUE LOS ACOMODE SEGÚN UN FORMATO MAS LEGIBLE PARA QUE LA CONSULTA DE GET NOMAS SEA 1 Y NO ANDAR PIDIENDO TANTAS VECES LOS DATOS 
