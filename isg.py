@@ -29,18 +29,21 @@ class ISG(Arreglo):
         return f"{self.nombre} ({self.unidad}) ({self.clave}) ({self.descripcion}) isf:({self.isf}) \nisf:\n{str(self.isf.get())}\n"
     
     def dictionary(self):
-        return{
+        isf_dict = {}  # Creamos un diccionario vacío para almacenar la información de ISF
+        if self.isf.arreglo:  # Verificamos si hay instancias de ISF en el arreglo
+            isf_dict = self.isf.arreglo[0].dictionary()  # Tomamos solo el primer elemento del arreglo de ISF
+        return {
             "nombre": self.nombre,
             "unidad": self.unidad,
             "clave": self.clave,
             "descripcion": self.descripcion,
-            "isf":[isf.dictionary() for isf in self.isf.arreglo]  
+            "isf": isf_dict
         }
         
     def ConvertoJson(self):
-        c = [isg.dictionary() for isg in self.arreglo]
+        isg_dicts = [isg.dictionary() for isg in self.arreglo]
         with open("./isg.json", "w") as archivo:
-            archivo.write(json.dumps(c, indent=4))
+            archivo.write(json.dumps(isg_dicts, indent=4))
 
     def extract(self, json):
         extracted_isg = ""
@@ -67,12 +70,21 @@ class ISG(Arreglo):
                 # Verificar si el tipo de sensor está en el diccionario
                 if tipo_sensor in sensor_dict:
                     nombre, unidad, clave, descripcion = sensor_dict[tipo_sensor]
-                    # Crear una instancia de ISF con los datos del sensor
-                    isf = ISF(numeroSerie, "COM1", Data())
-                    # Crear una instancia de Data
+                    # Verificar si ya existe una instancia de ISF con el mismo número de serie
+                    isf_existente = next((isf for isf in self.isf.arreglo if isf.NoSerie == numeroSerie), None)
+                    if isf_existente:
+                        # Si existe, usar la instancia existente de ISF
+                        isf = isf_existente
+                    else:
+                        # Si no existe, crear una nueva instancia de ISF con los datos del sensor
+                        isf = ISF(numeroSerie, "COM1", Data())
+                        self.isf.arreglo.append(isf)
+                    
+                    # Crear una instancia de Data con los datos del sensor
                     d = Data(tipo_sensor, numeroSerie, data)
                     # Agregar la instancia de Data a ISF
                     isf.data.post(d)
+
                     # Crear una instancia de ISG si aún no existe
                     if not self.arreglo:
                         igg = ISG(nombre, unidad, clave, descripcion, isf)
@@ -98,13 +110,5 @@ if __name__ == "__main__":
         x.procesar_datos_com_serial()
         
         print(x.ConvertoJson())
-
-        for c in x.arreglo: 
-            print(c)
-            print("isg:", type(c))
-            print("isf:", type(c.isf))
-
-            for s in c.isf.arreglo: 
-                print("isf", type(s))
                 
         time.sleep(5)
