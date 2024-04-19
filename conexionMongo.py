@@ -15,7 +15,7 @@ def check_internet():
 def save_to_mongodb(data):
     try:
         # Crea una conexión con MongoDB
-        client = pymongo.MongoClient("mongodb+srv://erik:Erik0604@cluster0.pjaaz3u.mongodb.net/")
+        client = pymongo.MongoClient("mongodb://127.0.0.1:27117,127.0.0.1:27118/")
         db = client["sensores"]
         col = db["data-sensores"]
 

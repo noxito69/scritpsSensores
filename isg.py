@@ -22,6 +22,7 @@ class ISG(Arreglo):
         self.unidad = unidad
         self.clave = clave
         self.descripcion = descripcion
+        
         self.isf = isf if isf else []  # Crear una nueva instancia de ISF si no se proporciona ninguna
         super().__init__()  
         
@@ -77,7 +78,7 @@ class ISG(Arreglo):
                         isf = isf_existente
                     else:
                         # Si no existe, crear una nueva instancia de ISF con los datos del sensor
-                        isf = ISF(numeroSerie, "COM1", Data())
+                        isf = ISF("1", "COM1", Data())
                         self.isf.arreglo.append(isf)
                     
                     # Crear una instancia de Data con los datos del sensor
@@ -111,4 +112,4 @@ if __name__ == "__main__":
         
         print(x.ConvertoJson())
                 
-        time.sleep(5)
+        time.sleep(1.5)

@@ -4,12 +4,40 @@
         "puerto": "COM1",
         "Data": [
             {
-                "uuid": "ad90c50e-cd3d-4e13-872e-b3583744b96a",
+                "uuid": "28f83d2b-67c4-4017-8879-c1d2463bf765",
                 "tipo_sensor": "US",
                 "numero_serie": 1,
                 "data": "1195",
-                "fecha": "13-04-2024",
-                "hora": "13:09:51"
+                "fecha": "15-04-2024",
+                "hora": "14:12:58"
+            }
+        ]
+    },
+    {
+        "NoSerie": "123",
+        "puerto": "COM1",
+        "Data": [
+            {
+                "uuid": "f134abca-5bee-45f3-aaef-9985317f75bf",
+                "tipo_sensor": "US",
+                "numero_serie": 1,
+                "data": "1195",
+                "fecha": "15-04-2024",
+                "hora": "14:12:58"
+            }
+        ]
+    },
+    {
+        "NoSerie": "123",
+        "puerto": "COM1",
+        "Data": [
+            {
+                "uuid": "d9fa4529-88b3-4d02-b6b3-5866e1bde293",
+                "tipo_sensor": "US",
+                "numero_serie": 1,
+                "data": "1195",
+                "fecha": "15-04-2024",
+                "hora": "14:12:58"
             }
         ]
     }

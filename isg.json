@@ -1,1 +1,202 @@
-[]
+[
+    {
+        "nombre": "sensor de temperatura",
+        "unidad": "\u00b0",
+        "clave": "TE",
+        "descripcion": "mide temperatura",
+        "isf": {
+            "id_estacion": "1",
+            "puerto": "COM1",
+            "Data": [
+                {
+                    "uuid": "2b020e78-9ab8-4e71-b519-14d6aa202569",
+                    "tipo_sensor": "TE",
+                    "numero_serie": "1",
+                    "data": "22.20",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:49"
+                },
+                {
+                    "uuid": "8ce1576f-f272-4a87-9a98-35a1c0749e35",
+                    "tipo_sensor": "HU",
+                    "numero_serie": "1",
+                    "data": "39.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:49"
+                },
+                {
+                    "uuid": "eac185a2-d10b-4b99-ba5a-e5a6fdc3b9f3",
+                    "tipo_sensor": "TE",
+                    "numero_serie": "1",
+                    "data": "22.20",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:56"
+                },
+                {
+                    "uuid": "0605c0b8-04ae-44a9-80da-194f74a0ea19",
+                    "tipo_sensor": "HU",
+                    "numero_serie": "1",
+                    "data": "39.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:56"
+                },
+                {
+                    "uuid": "26135532-2d5a-41e6-befc-87dd837277be",
+                    "tipo_sensor": "TE",
+                    "numero_serie": "1",
+                    "data": "22.20",
+                    "fecha": "18-04-2024",
+                    "hora": "16:29:03"
+                },
+                {
+                    "uuid": "c3a953af-dee4-41ef-96a6-611da01b74ff",
+                    "tipo_sensor": "HU",
+                    "numero_serie": "1",
+                    "data": "39.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:29:03"
+                }
+            ]
+        }
+    },
+    {
+        "nombre": "sensor humedad",
+        "unidad": "%",
+        "clave": "HU",
+        "descripcion": "mide humedad",
+        "isf": {
+            "id_estacion": "1",
+            "puerto": "COM1",
+            "Data": [
+                {
+                    "uuid": "2b020e78-9ab8-4e71-b519-14d6aa202569",
+                    "tipo_sensor": "TE",
+                    "numero_serie": "1",
+                    "data": "22.20",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:49"
+                },
+                {
+                    "uuid": "8ce1576f-f272-4a87-9a98-35a1c0749e35",
+                    "tipo_sensor": "HU",
+                    "numero_serie": "1",
+                    "data": "39.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:49"
+                },
+                {
+                    "uuid": "eac185a2-d10b-4b99-ba5a-e5a6fdc3b9f3",
+                    "tipo_sensor": "TE",
+                    "numero_serie": "1",
+                    "data": "22.20",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:56"
+                },
+                {
+                    "uuid": "0605c0b8-04ae-44a9-80da-194f74a0ea19",
+                    "tipo_sensor": "HU",
+                    "numero_serie": "1",
+                    "data": "39.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:56"
+                },
+                {
+                    "uuid": "26135532-2d5a-41e6-befc-87dd837277be",
+                    "tipo_sensor": "TE",
+                    "numero_serie": "1",
+                    "data": "22.20",
+                    "fecha": "18-04-2024",
+                    "hora": "16:29:03"
+                },
+                {
+                    "uuid": "c3a953af-dee4-41ef-96a6-611da01b74ff",
+                    "tipo_sensor": "HU",
+                    "numero_serie": "1",
+                    "data": "39.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:29:03"
+                }
+            ]
+        }
+    },
+    {
+        "nombre": "sensor ultra sonico",
+        "unidad": "cm",
+        "clave": "US",
+        "descripcion": "mide distancia",
+        "isf": {
+            "id_estacion": "1",
+            "puerto": "COM1",
+            "Data": [
+                {
+                    "uuid": "7afe997b-ffc1-4d06-a2eb-5964aad3c74e",
+                    "tipo_sensor": "US",
+                    "numero_serie": "3",
+                    "data": "795",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:49"
+                }
+            ]
+        }
+    },
+    {
+        "nombre": "sensor fotoresistencia",
+        "unidad": "Lx",
+        "clave": "FR",
+        "descripcion": "mide la luz",
+        "isf": {
+            "id_estacion": "1",
+            "puerto": "COM1",
+            "Data": [
+                {
+                    "uuid": "b221599e-730e-4ddf-a0e3-2fc906d489bc",
+                    "tipo_sensor": "FR",
+                    "numero_serie": "4",
+                    "data": "0",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:49"
+                }
+            ]
+        }
+    },
+    {
+        "nombre": "sensor de RPM",
+        "unidad": "rpm",
+        "clave": "RP",
+        "descripcion": "mide las revoluciones por minuto",
+        "isf": {
+            "id_estacion": "1",
+            "puerto": "COM1",
+            "Data": [
+                {
+                    "uuid": "da23343b-327a-470b-9b00-e9c8690bf472",
+                    "tipo_sensor": "RP",
+                    "numero_serie": "5",
+                    "data": "0.00",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:56"
+                }
+            ]
+        }
+    },
+    {
+        "nombre": "sensor de infrarojo",
+        "unidad": "estado",
+        "clave": "IR",
+        "descripcion": "revisa si hay obstaculos",
+        "isf": {
+            "id_estacion": "1",
+            "puerto": "COM1",
+            "Data": [
+                {
+                    "uuid": "7dc4345b-5d01-44e0-93d8-4fddeeaa57c1",
+                    "tipo_sensor": "IR",
+                    "numero_serie": "6",
+                    "data": "Libre :D",
+                    "fecha": "18-04-2024",
+                    "hora": "16:28:56"
+                }
+            ]
+        }
+    }
+]
