@@ -14,15 +14,15 @@ def check_internet():
 
 def save_to_mongodb(data):
     try:
-        # Crea una conexión con MongoDB
-        client = pymongo.MongoClient("mongodb+srv://erik:Erik0604@cluster0.pjaaz3u.mongodb.net/")
+       
+        client = pymongo.MongoClient("mongodb://3.14.83.197:27117/")
         db = client["sensores"]
         col = db["data-sensores"]
 
-        # Si el archivo JSON contiene una lista de documentos
+       
         if isinstance(data, list):
             col.insert_many(data)
-        # Si el archivo JSON contiene un solo documento
+       
         else:
             col.insert_one(data)
         
@@ -39,11 +39,11 @@ def save_to_json(data):
     print("Los datos se han guardado en isg.json.")
 
 def process_data():
-    data = load_from_json()  # Carga los datos del archivo JSON
+    data = load_from_json()  
     for i in range(len(data)):
         if check_internet():
             if save_to_mongodb(data[i]):
-                # Si los datos se enviaron a MongoDB con éxito, borra los datos del archivo JSON
+                
                 data.pop(i)
                 save_to_json(data)
                 break
@@ -55,7 +55,7 @@ def load_from_json():
         data = json.load(f)
     return data
 
-# Ejemplo de uso
+
 while True:
     process_data()
-    time.sleep(1)  # Espera 3 segundos antes de verificar de nuevo
+    time.sleep(1) 

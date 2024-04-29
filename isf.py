@@ -15,7 +15,7 @@ class ISF(Arreglo):
                 
     def dictionary(self):
         return{
-            "NoSerie":self.NoSerie,
+            "id_estacion":"1",
             "puerto":self.puerto,
             "Data":[data.dictionary() for data in self.data.arreglo]
         }
@@ -28,16 +28,11 @@ class ISF(Arreglo):
     def extract(self, json):
         isf_str = ""
         for isf_dict in json:
-            sa = ISF(isf_dict['NoSerie'], isf_dict['puerto'], Data())
+            sa = ISF(isf_dict['id_estacion'], isf_dict['puerto'], Data())
             sa.data.extract_data(isf_dict['Data'])
             isf_str += str(sa) + "\n"
             self.post(sa)
         return isf_str.strip()
-        
-
-
-
-        
     
 if __name__ == "__main__":
     

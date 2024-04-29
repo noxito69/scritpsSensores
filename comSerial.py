@@ -1,11 +1,13 @@
 import serial, time
 
 class ComSerial:
-    def __init__(self, port = 'COM3', baudrate = 115200) -> None:
+    def __init__(self, port = '/dev/ttyUSB0', baudrate = 115200) -> None:
         self.port = port
         self.baudrate = baudrate
+        # meti esto
+        #self.esp32 = serial.Serial(self.port, self.baudrate)
 
-    def datoSerial(self, num_lineas=9):
+    def datoSerial(self, num_lineas=10):
         datos = []
         try:
             self.esp32 = serial.Serial(self.port, self.baudrate)
@@ -21,11 +23,16 @@ class ComSerial:
             self.esp32.close()
 
         except serial.SerialException:
-            print("\nNo se puede abrir el puerto serial porque hay otra gata rompehogares usando el puerto, cierralo >:c\n")
+            print("\nNo se puede abrir el puerto serial porque hay otra aplicación usando el puerto, ciérralo >:c\n")
 
         return datos
     
+   
+
 if __name__ == "__main__":
-    # esto ya es para que muestre los datos que me manda el serial loco, simplemente waos 
+    # esto ya es para que muestre los datos que me manda el serial, simplemente waos 
     x = ComSerial()
+    # meti esto
+    #value = 1
+    #x.enviar_valor(value)
     x.datoSerial()

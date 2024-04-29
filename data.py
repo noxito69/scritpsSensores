@@ -10,9 +10,9 @@ class Data(Arreglo):
         self.tipo_sensor = tipo_sensor
         self.numeroSerie = numeroSerie
         self.data = data
-        self.fecha = datetime.now().strftime("%d-%m-%Y")  # Fecha actual en formato dd-mm-yyyy
-        self.hora = datetime.now().strftime("%H:%M:%S")    # Hora actual en formato HH:MM:SS
-        self.uuid = uuid.uuid4()  # Generar UUID único
+        self.fecha = datetime.now().strftime("%d-%m-%Y") 
+        self.hora = datetime.now().strftime("%H:%M:%S")    
+        self.uuid = uuid.uuid4()  
      
         super().__init__()
          
@@ -21,7 +21,7 @@ class Data(Arreglo):
         
     def dictionary(self):
         return{
-            "uuid": str(self.uuid),  # Convertir UUID a cadena antes de serializarlo
+            "uuid": str(self.uuid),  
             "tipo_sensor": self.tipo_sensor,
             "numero_serie": self.numeroSerie,
             "data": self.data,
@@ -43,7 +43,7 @@ class Data(Arreglo):
         
         return data_str.strip()
 
-    # agregué este de aqui para tomar los datos de mi ComSerial
+    
     def procesar_datos(self, datos):
         for dato in datos:
             partes = dato.split('-')
